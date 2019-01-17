@@ -18,8 +18,16 @@ export class CadastrarComponent implements OnInit {
 
   initForm() {
     this.cadastroForm = new FormGroup({
-      nome: new FormControl('')
+      nome: new FormControl(),
+      cpf: new FormControl(),
+      rg: new FormControl(),
+      telefone: new FormControl(),
+      celular: new FormControl(),
+      endereco: new FormControl(),
+      email: new FormControl()
     });
   }
-
+  salvarForm() {
+    console.log(this.cadastroForm.value);
+  }
 }
