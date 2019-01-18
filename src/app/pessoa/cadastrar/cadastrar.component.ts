@@ -1,3 +1,4 @@
+import { Endereco } from './../../model/endereco.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -23,8 +24,16 @@ export class CadastrarComponent implements OnInit {
       rg: new FormControl(),
       telefone: new FormControl(),
       celular: new FormControl(),
-      endereco: new FormControl(),
-      email: new FormControl()
+      email: new FormControl(),
+      endereco: new FormGroup({
+        logradouro: new FormControl(),
+        numero: new FormControl(),
+        bairro: new FormControl(),
+        complemento: new FormControl(),
+        cep: new FormControl(),
+        cidade: new FormControl(),
+        estado: new FormControl()
+      })
     });
   }
   salvarForm() {

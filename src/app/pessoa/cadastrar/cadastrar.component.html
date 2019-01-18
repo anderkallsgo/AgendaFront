@@ -1,0 +1,68 @@
+<div class="container">
+<form [formGroup]="cadastroForm">
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" placeholder="Informe seu nome" formControlName="nome">
+  </div>
+  <div class="form-group col-md-3">
+    <label for="cpf">CPF</label>
+    <input type="text" class="form-control" id="cpf" placeholder="Informe seu CPF" formControlName="cpf">
+  </div>
+  <div class="form-group col-md-3">
+      <label for="rg">RG</label>
+      <input type="text" class="form-control" id="rg" placeholder="Informe seu RG" formControlName="rg">
+    </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" placeholder="Informe seu Telefone" formControlName="telefone">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="celular">Celular</label>
+        <input type="text" class="form-control" id="celular" placeholder="Informe seu Celular" formControlName="celular">
+      </div>
+      <div class="form-group col-md-6">
+          <label for="email">E-Mail</label>
+          <input type="text" class="form-control" id="email" placeholder="Informe seu E-Mail" formControlName="email">
+        </div>
+    </div>
+    <div formGroupName="endereco">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="logradouro">Rua</label>
+            <input type="text" class="form-control" id="logradouro" placeholder="Nome da rua" formControlName="logradouro">
+    </div>
+    <div class="form-group col-md-2">
+        <label for="numero">Numero</label>
+        <input type="text" class="form-control" id="numero" placeholder="Numero" formControlName="numero">
+  </div>
+  <div class="form-group col-md-4">
+    <label for="bairro">Bairro</label>
+    <input type="text" class="form-control" id="bairro" placeholder="Bairro" formControlName="bairro">
+</div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-4">
+      <label for="complemento">Complemento</label>
+      <input type="text" class="form-control" id="complemento" placeholder="Complemento" formControlName="complemento">
+</div>
+<div class="form-group col-md-2">
+  <label for="cep">CEP</label>
+  <input type="text" class="form-control" id="cep" placeholder="CEP" formControlName="cep">
+</div>
+<div class="form-group col-md-4">
+  <label for="cidade">Cidade</label>
+  <input type="text" class="form-control" id="cidade" placeholder="Cidade" formControlName="cidade">
+</div>
+<div class="form-group col-md-2">
+  <label for="estado">Estado</label>
+  <input type="text" class="form-control" id="estado" placeholder="Estado" formControlName="estado">
+</div>
+</div>
+</div>
+  <button type="submit" class="btn btn-primary" (click)="salvarForm()">Salvar</button>
+</form>
+</div>
+
