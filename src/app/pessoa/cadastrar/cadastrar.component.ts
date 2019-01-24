@@ -1,6 +1,8 @@
+import { PessoaService } from './../pessoa.service';
 import { Endereco } from './../../model/endereco.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Pessoa } from 'src/app/model/pessoa.model';
 
 @Component({
   selector: 'app-cadastrar',
@@ -10,11 +12,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class CadastrarComponent implements OnInit {
 
   cadastroForm: FormGroup;
+  pessoa: Pessoa;
 
-  constructor() { }
+  constructor(private pessoaService: PessoaService) { }
 
   ngOnInit() {
     this.initForm();
+    this.pessoa = new Pessoa();
   }
 
   initForm() {
@@ -36,7 +40,10 @@ export class CadastrarComponent implements OnInit {
       })
     });
   }
+
   salvarForm() {
     console.log(this.cadastroForm.value);
+    this.pessoaService.cadastrar(this.cadastroForm.value).subscribe(resultado => this.pessoa = resultado);
+    console.log(this.pessoa);
   }
 }
