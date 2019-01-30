@@ -18,15 +18,10 @@ export class PessoaService {
     return this.httpClient.post<Pessoa>(environment.pessoa.save, pessoa, httpOptions);
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
+  listar(): Observable<Pessoa[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
+    return this.httpClient.get<Pessoa[]>(environment.pessoa.list, httpOptions);
   }
-
 }

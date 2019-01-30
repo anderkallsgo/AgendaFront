@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PessoaService } from './../pessoa.service';
 import { Endereco } from './../../model/endereco.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,8 @@ export class CadastrarComponent implements OnInit {
   cadastroForm: FormGroup;
   pessoa: Pessoa;
 
-  constructor(private pessoaService: PessoaService) { }
+  constructor(private router: Router,
+    private pessoaService: PessoaService) { }
 
   ngOnInit() {
     this.initForm();
@@ -43,7 +45,9 @@ export class CadastrarComponent implements OnInit {
 
   salvarForm() {
     console.log(this.cadastroForm.value);
-    this.pessoaService.cadastrar(this.cadastroForm.value).subscribe(resultado => this.pessoa = resultado);
+    this.pessoaService.cadastrar(this.cadastroForm.value).subscribe((resultado) => {this.pessoa = resultado;
+    this.router.navigate(['/listarPessoa']);
+  });
     console.log(this.pessoa);
   }
 }
