@@ -24,4 +24,9 @@ export class PessoaService {
     };
     return this.httpClient.get<Pessoa[]>(environment.pessoa.list, httpOptions);
   }
+
+  deletar(id: number): Observable<any> {
+    const url = environment.pessoa.delete + '/' + id;
+    return this.httpClient.delete<any>(url);
+  }
 }

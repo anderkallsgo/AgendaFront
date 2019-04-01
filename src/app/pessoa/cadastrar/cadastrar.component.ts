@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { PessoaService } from './../pessoa.service';
-import { Endereco } from './../../model/endereco.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Pessoa } from 'src/app/model/pessoa.model';

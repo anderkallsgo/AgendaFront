@@ -6,15 +6,21 @@
       <th scope="col">Telefone</th>
       <th scope="col">Celular</th>
       <th scope="col">E-Mail</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Anderson</td>
-      <td>99887766</td>
-      <td>99665544</td>
-      <td>email@email.com</td>
+    <tr *ngFor="let pessoa of listarPessoas">
+      <th scope="row">{{pessoa.id}}</th>
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.telefone}}</td>
+      <td>{{pessoa.celular}}</td>
+      <td>{{pessoa.email}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deletePessoa(pessoa)">
+          Excluir
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
